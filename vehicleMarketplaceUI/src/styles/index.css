@@ -1,0 +1,6 @@
+#root {
+    background-image: linear-gradient(to bottom right ,#FAF8C8, #7A783D);
+    height: 100vh;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 15px 10px;
+}
