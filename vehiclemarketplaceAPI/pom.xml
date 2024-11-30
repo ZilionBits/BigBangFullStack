@@ -11,7 +11,7 @@
 	<groupId>lt.stud.tech</groupId>
 	<artifactId>vehiclemarketplace</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>vehiclemarketplace</name>
+	<name>vehicle marketplace</name>
 	<description>Marketplace</description>
 	<url/>
 	<licenses>
@@ -57,6 +57,11 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

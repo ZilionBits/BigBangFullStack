@@ -35,7 +35,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "rgb(0,0,0,0.5)" }}>
+    <AppBar position="static" sx={{ backgroundColor: "rgb(0,0,0,0.5)", mb: "20px"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -144,7 +144,7 @@ function ResponsiveAppBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: "center" }}>
+                  <Typography sx={{ textAlign: "center"}}>
                     {setting}
                   </Typography>
                 </MenuItem>
