@@ -1,19 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
-    Box,
-    TextField,
-    Button,
-    Typography,
-    Container,
-  } from "@mui/material";
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Container,
+  Stack,
+} from "@mui/material";
+import { Link } from "react-router-dom";
+import GlobalDataContext from "../assets/global/GlobalDataContext";
+import { vehicleApi } from "../restAPI/VehicleAPI"
 
 export const LoginSuggest = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const {handleVisitor} = useContext(GlobalDataContext);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log({ userName, password });
+
+    const response = await vehicleApi.authenticate(userName, password);
+
+    console.log(response)
+
   };
 
   return (
@@ -52,14 +63,19 @@ export const LoginSuggest = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 2 }}
-          >
+          <Button type="submit" fullWidth variant="contained" sx={{ mt: 2 }}>
             Login
           </Button>
+          <Stack direction="row" sx={{ justifyContent: "space-between" }}>
+            <Button variant="contained" sx={{ mt: 2 }}>
+              SignUp
+            </Button>
+            <Link to="/homepage">
+            <Button onClick={() => handleVisitor("Guest")} variant="contained" sx={{ mt: 2 }}>
+              Continue as guest
+            </Button>
+            </Link>
+          </Stack>
         </Box>
       </Box>
     </Container>

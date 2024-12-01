@@ -36,6 +36,7 @@ export const ProductCard = ({ brand, model, image, price }) => {
       <CardActions>
         <Button sx={{color: "white"}} size="large">Details</Button>
         <Button sx={{color: "green"}} size="large">Buy</Button>
+        <Button sx={{color: "yellow"}} size="large">Update</Button>
         <Button sx={{color: "red"}} size="large">Delete</Button>
       </CardActions>
     </Card>
